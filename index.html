@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mis XV Años - Invitación</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="hero">
+        <div class="fade-in">
+            <h2>Estás invitado a mis</h2>
+            <h1>XV Años</h1>
+            <p style="font-size: 1.2rem;">Alondra Yatziri Mejía Jiménez</p>
+            <p style="font-size: 1.2rem;">Papás:</p>
+            <p style="font-size: 1.2rem;">Ana Yancy Mejía Jiménez</p>
+            <p style="font-size: 1.2rem;">Noé Martínez Sánchez</p>
+        </div>
+    </header>
+
+    <div class="photo-divider">
+        <img src="DSC_3090.jpg" alt="Foto de la Quinceañera 1">
+    </div>
+
+    <section>
+        <h3>Faltan...</h3>
+        <div id="countdown" class="countdown">
+            <div class="time-box"><span id="days">00</span><label>Días</label></div>
+            <div class="time-box"><span id="hours">00</span><label>Hs</label></div>
+            <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
+            <div class="time-box"><span id="seconds">00</span><label>Seg</label></div>
+        </div>
+    </section>
+
+    <section>
+        <h3>Ceremonia Religiosa</h3>
+        <p>📅 Sábado, 14 de marzo de 2026</p>
+        <p>🕔 11:00 AM</p>
+        <p>📍 Santa María Guadalupe, Centro de Mixquiahuala</p>
+        <a href="https://maps.app.goo.gl/S8wdP3bwfyTGA75j7" target="_blank" class="btn btn-outline">Ver en Mapa</a>
+    </section>
+
+    <div class="photo-divider">
+        <img src="DSC_3127.jpg" alt="Foto de la Quinceañera 2">
+    </div>
+
+    <section>
+        <h3>Recepción</h3>
+        <p>🕔 2:30 PM</p>
+        <p>📍 CALLE QUINTANA ROO S/N COL. EL BONDHO</p>
+        <a href="https://maps.app.goo.gl/nfSzLXkbKHHrE99N7" target="_blank" class="btn btn-outline">Ver en Mapa</a>
+    </section>
+
+    <section>
+        <h3>Código de Vestimenta</h3>
+        <p class="textoabajo">Formal y bien guap@s</p>
+        <p class="textoabajo">Se reserva el color azul marino para la quinceañera</p>
+    </section>
+    
+    <footer>
+    </footer>
+
+    <audio id="audioPlayer" loop>
+        <source src="Perfect.mp3" type="audio/mp3">
+    </audio>
+    <button id="musicBtn" class="music-btn">
+        🔇
+    </button>
+
+    <script>
+        // --- 1. CONFIGURACIÓN DE CUENTA REGRESIVA ---
+        const eventDate = new Date("Mar 14, 2026 11:00:00").getTime(); // Ajusté la hora a las 11:00 AM (inicio del evento)
+
+        const timer = setInterval(function () {
+            const now = new Date().getTime();
+            const distance = eventDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days;
+            document.getElementById("hours").innerText = hours;
+            document.getElementById("minutes").innerText = minutes;
+            document.getElementById("seconds").innerText = seconds;
+
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<h3>¡Es hoy!</h3>";
+            }
+        }, 1000);
+
+        /* --- LÓGICA DE MÚSICA --- */
+        const audio = document.getElementById("audioPlayer");
+        const btn = document.getElementById("musicBtn");
+        let isPlaying = false;
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                btn.innerHTML = "🔇"; // Icono de silencio
+                btn.classList.remove("music-playing");
+            } else {
+                audio.play();
+                btn.innerHTML = "🎵"; // Icono de música
+                btn.classList.add("music-playing");
+            }
+            isPlaying = !isPlaying;
+        }
+
+        // INTENTO DE AUTOPLAY (Opcional)
+        // Algunos navegadores permiten reproducir si el usuario hace clic en CUALQUIER lugar
+        document.body.addEventListener('click', function () {
+            if (!isPlaying) {
+                // Solo intentamos reproducir la primera vez que tocan la pantalla
+                toggleMusic();
+                // Removemos el evento para que no se pause si vuelven a tocar la pantalla
+                document.body.removeEventListener('click', arguments.callee);
+            }
+        }, { once: true });
+    </script>
+</body>
+
+</html>

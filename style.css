@@ -1,0 +1,239 @@
+/* --- RESET Y VARIABLES --- */
+    :root {
+        --primary-color: #001F3F; /* Azul Marino (Texto oscuro) */
+        --card-bg: #0e5ba3;       /* Azul Rey (Fondo de las tarjetas) */
+        --bg-body: #EBF5FB;       /* Azul Hielo (Fondo de la página) */
+        --accent-font: 'Great Vibes', cursive;
+        --body-font: 'Montserrat', sans-serif;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: var(--body-font);
+        background-color: var(--bg-body);
+        color: var(--primary-color);
+        text-align: center;
+        line-height: 1.6;
+    }
+
+    /* --- TARJETAS (SECCIONES) --- */
+    section {
+        padding: 40px 20px;
+        /* Fondo AZUL para las tarjetas */
+        background: var(--card-bg); 
+        color: white; /* Texto blanco sobre fondo azul */
+        margin: 20px;
+        border-radius: 15px;
+        box-shadow: 0 10px 25px rgba(0, 31, 63, 0.2);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1, h2, h3 {
+        color: white; /* Títulos blancos dentro de las tarjetas */
+    }
+
+    h1 {
+        font-family: var(--accent-font);
+        font-size: 3.5rem;
+        margin-bottom: 10px;
+        text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    h3 {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.3);
+        display: inline-block;
+        padding-bottom: 10px;
+    }
+
+    p {
+        margin-bottom: 15px;
+        font-size: 0.95rem;
+        color: #f0f8ff; /* Blanco ligeramente azulado para párrafos */
+    }
+
+    /* --- PORTADA (HERO) --- */
+    .hero {
+        /* Degradado azul transparente sobre la foto */
+        background: linear-gradient(#0e5ba3, #05447e), url('https://images.unsplash.com/photo-1546195864-153965b6e41b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        margin: 0;
+        border-radius: 0 0 30px 30px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .hero h2 {
+        font-size: 1.2rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #EBF5FB;
+        margin-bottom: 0;
+    }
+
+    /* --- CUENTA REGRESIVA --- */
+    .countdown {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .time-box {
+        background: rgba(0, 0, 0, 0.2); /* Fondo oscuro semitransparente */
+        border: 1px solid rgba(255,255,255,0.3);
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        min-width: 70px;
+    }
+
+    .time-box span {
+        display: block;
+        font-size: 1.8rem;
+        font-weight: bold;
+    }
+
+    .time-box label {
+        font-size: 0.7rem;
+        text-transform: uppercase;
+    }
+
+    /* --- BOTONES BLANCOS (TU PEDIDO) --- */
+    .btn {
+        display: inline-block;
+        padding: 14px 35px;
+        margin: 10px 0;
+        
+        /* AQUÍ ESTÁ EL CAMBIO: FONDO BLANCO */
+        background-color: #ffffff; 
+        
+        /* Texto Azul Oscuro para contraste */
+        color: var(--primary-color); 
+        
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.85rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        background-color: #f0f0f0; /* Un blanco un poquito gris al pasar el mouse */
+    }
+
+    /* Estilo para el botón secundario (Borde blanco) */
+    .btn-outline {
+        background-color: transparent;
+        border: 2px solid #ffffff;
+        color: #ffffff;
+        box-shadow: none;
+    }
+
+    .btn-outline:hover {
+        background-color: #ffffff;
+        color: var(--primary-color);
+    }
+
+    /* --- ANIMACIÓN --- */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeIn 1.2s ease-out forwards;
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 380px) {
+        h1 { font-size: 2.8rem; }
+        .time-box { min-width: 60px; padding: 10px; }
+    }
+
+    .photo-divider {
+            margin: 30px 20px; /* Margen igual que las secciones */
+            border-radius: 15px;
+            overflow: hidden; /* Para que la imagen respete el borde redondeado */
+            box-shadow: 0 10px 25px rgba(0, 31, 63, 0.2);
+            line-height: 0; /* Elimina espacio extra debajo de la imagen */
+        }
+
+        .photo-divider img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- BOTÓN DE MÚSICA --- */
+        .music-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ffffff;
+            color: #001F3F;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .music-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .music-playing {
+            animation: pulse 2s infinite;
+            background-color: #001F3F;
+            color: white;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 31, 63, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 31, 63, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 31, 63, 0); }
+        }
+
+        /* --- ANIMACIÓN --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeIn 1.2s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 380px) {
+            h1 { font-size: 2.8rem; }
+            .time-box { min-width: 60px; padding: 10px; }
+        }
