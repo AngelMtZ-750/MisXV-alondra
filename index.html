@@ -1,106 +1,106 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mis XV Años - Invitación</title>
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <title>Mis XV Años - Alondra Yatziri</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-    <header class="hero">
-        <div class="fade-in">
-            <h2 >Estás invitado a mis</h2>
-            <h1>XV Años</h1>
-            <p style="font-size: 1.2rem;">Alondra Yatziri</p>
-            <h2>Mis Padres:</h2>
-            <p style="font-size: 1.2rem;">Ana Yancy</p>
-            <p style="font-size: 1.2rem;">Y</p>
-            <p style="font-size: 1.2rem;">Noé</p>
-            <h2>Mi Padrino:</h2>
-            <p style="font-size: 1.2rem;">Edgar Mejia</p>
+    <div class="invitation-container">
 
+        <header class="header-section">
+            <h2 class="subtitle">Mis XV Años</h2>
+            <h1 class="title-name">Alondra Yatziri</h1>
+            </header>
+
+        <div class="photo-container">
+            <img src="DSC_3090.jpg" alt="Foto de Alondra 1">
         </div>
-    </header>
 
-    <div class="photo-divider">
-        <img src="DSC_3090.jpg" alt="Foto de la Quinceañera 1">
-    </div>
+        <div class="info-section">
+            <h3>MIS PADRES:</h3>
+            <p class="names">Ana Yancy </p>
+            <p class="names">Noé </p>
+        </div>
 
-    <section>
-        <h3>Faltan...</h3>
+        <div class="info-section">
+            <h3>Padrino:</h3>
+            <p class="names">EDGAR MEJIA</p>
+        </div>
+
+        <div class="info-section">
+            <p style="margin-bottom: 5px;">Acompáñanos el día</p>
+            <div class="date-highlight">
+                <span class="day">SÁBADO</span>
+                <span class="number">14</span>
+                <span class="month">MARZO</span>
+            </div>
+            <p class="year">2026</p>
+        </div>
+
         <div id="countdown" class="countdown">
             <div class="time-box"><span id="days">00</span><label>Días</label></div>
             <div class="time-box"><span id="hours">00</span><label>Hs</label></div>
             <div class="time-box"><span id="minutes">00</span><label>Min</label></div>
             <div class="time-box"><span id="seconds">00</span><label>Seg</label></div>
         </div>
-    </section>
 
-    <section>
-        <h3>Ceremonia Religiosa</h3>
-        <p>📅 Sábado, 14 de marzo de 2026</p>
-        <p>🕔 11:00 AM</p>
-        <p>📍 Santa María Guadalupe, Centro de Mixquiahuala</p>
-        <a href="https://maps.app.goo.gl/S8wdP3bwfyTGA75j7" target="_blank" class="btn btn-outline">Ver en Mapa</a>
-    </section>
+        <div class="divider"></div>
 
-    <section>
-        <h3>Recepción</h3>
-        <p>🕔 2:30 PM</p>
-        <p>📍 CALLE QUINTANA ROO S/N COL. EL BONDHO</p>
-        <a href="https://maps.app.goo.gl/nfSzLXkbKHHrE99N7" target="_blank" class="btn btn-outline">Ver en Mapa</a>
-    </section>
+        <div class="info-section">
+            <h3>Ceremonia Religiosa</h3>
+            <p class="time">11:00 AM</p>
+            <p>📍 Santa María De Guadalupe<br>Centro de Mixquiahuala</p>
+            <a href="https://maps.app.goo.gl/S8wdP3bwfyTGA75j7" target="_blank" class="btn">Ver mapa de ubicación</a>
+        </div>
 
-    <div class="photo-divider">
-        <img src="DSC_3127.jpg" alt="Foto de la Quinceañera 2">
+<div class="divider"></div>
+
+        <div class="info-section">
+            <h3>Recepción</h3>
+            <p class="time">2:30 PM</p>
+            <p>📍 Calle Quintana Roo S/N<br>Col. El Bondho</p>
+            <a href="https://maps.app.goo.gl/nfSzLXkbKHHrE99N7" target="_blank" class="btn">Ver mapa de ubicación</a>
+        </div>
+
+        
+                <div class="photo-container">
+            <img src="DSC_3127.jpg" alt="Foto de Alondra 2">
+        </div>
+
+        <div class="info-section">
+            <h3 style="font-family: var(--accent-font); font-size: 2.5rem; text-transform: none; color: var(--navy-blue);">Código de vestimenta</h3>
+            <p class="formal">FORMAL BIEN GUAP@S </p>
+            <p class="icon">👗 👔</p>
+            <p class="note">Se reserva el color azul marino para la quinceañera</p>
+        </div>
     </div>
-
-    <section>
-        <h3>Código de Vestimenta</h3>
-        <p class="textoabajo">Formal y bien guap@s</p>
-        <p class="textoabajo">Se reserva el color azul marino para la quinceañera</p>
-    </section>
-
-    <footer>
-    </footer>
 
     <audio id="audioPlayer" loop>
         <source src="Perfect.mp3" type="audio/mp3">
     </audio>
-    <button id="musicBtn" class="music-btn">
-        🔇
-    </button>
+    <button id="musicBtn" class="music-btn">🔇</button>
 
     <script>
-        // --- 1. CONFIGURACIÓN DE CUENTA REGRESIVA ---
-        const eventDate = new Date("Mar 14, 2026 11:00:00").getTime(); // Ajusté la hora a las 11:00 AM (inicio del evento)
-
+        // --- RELOJ ---
+        const eventDate = new Date("Mar 14, 2026 11:00:00").getTime();
         const timer = setInterval(function () {
             const now = new Date().getTime();
             const distance = eventDate - now;
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            document.getElementById("days").innerText = days;
-            document.getElementById("hours").innerText = hours;
-            document.getElementById("minutes").innerText = minutes;
-            document.getElementById("seconds").innerText = seconds;
-
+            document.getElementById("days").innerText = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerText = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerText = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerText = Math.floor((distance % (1000 * 60)) / 1000);
             if (distance < 0) {
                 clearInterval(timer);
-                document.getElementById("countdown").innerHTML = "<h3>¡Es hoy!</h3>";
+                document.getElementById("countdown").innerHTML = "<p style='font-family: var(--accent-font); font-size: 2.5rem; color: var(--navy-blue);'>¡El gran día ha llegado!</p>";
             }
         }, 1000);
 
-        /* --- LÓGICA DE MÚSICA --- */
+        // --- MÚSICA ---
         const audio = document.getElementById("audioPlayer");
         const btn = document.getElementById("musicBtn");
         let isPlaying = false;
@@ -108,27 +108,24 @@
         function toggleMusic() {
             if (isPlaying) {
                 audio.pause();
-                btn.innerHTML = "🔇"; // Icono de silencio
-                btn.classList.remove("music-playing");
+                btn.innerHTML = "🔇";
             } else {
                 audio.play();
-                btn.innerHTML = "🎵"; // Icono de música
-                btn.classList.add("music-playing");
+                btn.innerHTML = "🎵";
             }
             isPlaying = !isPlaying;
         }
 
-        // INTENTO DE AUTOPLAY (Opcional)
-        // Algunos navegadores permiten reproducir si el usuario hace clic en CUALQUIER lugar
+        // Tocar al hacer click en el botón flotante
+        btn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleMusic();
+        });
+
+        // Tocar automático con el primer toque en la pantalla
         document.body.addEventListener('click', function () {
-            if (!isPlaying) {
-                // Solo intentamos reproducir la primera vez que tocan la pantalla
-                toggleMusic();
-                // Removemos el evento para que no se pause si vuelven a tocar la pantalla
-                document.body.removeEventListener('click', arguments.callee);
-            }
+            if (!isPlaying) { toggleMusic(); }
         }, { once: true });
     </script>
 </body>
-
 </html>
